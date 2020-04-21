@@ -15,5 +15,5 @@ public class fdaAPI {
         System.out.println(searcheddata);
         return;
     }
-    var
+
 }
