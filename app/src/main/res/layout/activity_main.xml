@@ -55,39 +55,46 @@
         android:id="@+id/searchFDA"
         android:layout_width="181dp"
         android:layout_height="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:hint="searchFDA"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/editText2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="121dp"
         android:layout_height="53dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:ems="10"
         android:hint="(g):"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintStart_toEndOf="@+id/searchFDA"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/checkButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:text="check"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchFDA" />
+        app:layout_constraintTop_toBottomOf="@+id/add" />
 
     <Button
         android:id="@+id/clearfood"
@@ -96,33 +103,32 @@
         android:layout_marginTop="30dp"
         android:text="clear"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchFDA" />
+        app:layout_constraintTop_toBottomOf="@+id/search" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="@android:string/ok"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="add"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="208dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="OK: submit the fodd;Check: what have been entered."
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@android:string/search_go"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.213"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkButton"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintTop_toBottomOf="@+id/searchFDA" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
