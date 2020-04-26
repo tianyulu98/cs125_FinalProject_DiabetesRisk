@@ -8,8 +8,17 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static String textSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,17 +26,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button generate = findViewById(R.id.generateButton);
         Button clear = findViewById(R.id.clearButton);
+        final EditText search = findViewById(R.id.searchFDA);
+        textSearch = search.getText().toString();
+
+        //hitting generate button should generate a report.
         generate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Code here executes on main thread after user presses button
                 generateCreateDialog();
             }
         });
-        generate.setOnClickListener(new View.OnClickListener() {
+        //hitting clear button should clear all inputs.
+        clear.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clearButton();
             }
         });
+    }
+
+    public void search() {
+        fdaAPI.connect(textSearch, this);
     }
 
     public void generateCreateDialog() {
