@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.cs125_spring2020_finalproject.MainActivity.hit;
+
 import static com.example.cs125_spring2020_finalproject.MainActivity.input;
 
 public class display extends AppCompatActivity {
@@ -19,14 +20,14 @@ public class display extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent mIntent = getIntent();
         int hits = mIntent.getIntExtra("totalhit", 0);
+        ArrayList<String> list = mIntent.getStringArrayListExtra("list");
         setContentView(R.layout.activity_display);
         TextView display = findViewById(R.id.textView3);
         display.setText("");
-        /**if ( == null) {
-            display.setText(MainActivity.textSearch);
-        } else {
-            display.setText(searcheddata.toString());
-        }*/
-        display.setText(input + String.valueOf(hits));
+        String tostring = "";
+        for (int i = 0; i < list.size(); i++) {
+            tostring += list.get(i) + "*";
+        }
+        display.setText(input + String.valueOf(hits) + tostring);
     }
 }
