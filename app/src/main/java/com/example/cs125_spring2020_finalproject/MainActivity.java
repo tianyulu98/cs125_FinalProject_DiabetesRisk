@@ -25,6 +25,7 @@ import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText searchinput;
     private Button searchbutton;
     public static String textSearch;
+    public Map<Integer, String> searchedList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 display();
             }
         });
+
         //hitting generate button should generate a report.
         generate.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -79,8 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             hit = response.getInt("totalHits");
-                            /**
-                            JSONArray foods = response.getJSONArray("foods");
+                            /**JSONArray foods = response.getJSONArray("foods");
                             for (int i = 0; i < foods.length(); i++) {
                                 JSONObject lista = foods.getJSONObject(i);
                                 String tem = lista.getString("description");

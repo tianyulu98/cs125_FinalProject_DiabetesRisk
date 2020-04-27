@@ -22,6 +22,6 @@ public class display extends AppCompatActivity {
         } else {
             display.setText(searcheddata.toString());
         }*/
-        display.setText(hit);
+        display.setText(input + String.valueOf(hit));
     }
 }
