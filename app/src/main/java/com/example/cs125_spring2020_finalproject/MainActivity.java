@@ -22,23 +22,21 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
-import java.util.List;
+import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String fda = "https://api.nal.usda.gov/fdc/v1/search?";
     private static final String apikey = "api_key=WfBOw7Htobl3oAqVVFbVdvEoDiN6IOpd6K6QeG8t";
-    public static List<String> searcheddata;
     public static int hit = 0;
     public static String input;
     private static RequestQueue queue;
     private EditText searchinput;
     private Button searchbutton;
     public static String textSearch;
-    public Map<Integer, String> searchedList;
+    public Map<Integer, String> searchedList = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,12 +80,13 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             hit = response.getInt("totalHits");
-                            /**JSONArray foods = response.getJSONArray("foods");
+                            JSONArray foods = response.getJSONArray("foods");
                             for (int i = 0; i < foods.length(); i++) {
                                 JSONObject lista = foods.getJSONObject(i);
-                                String tem = lista.getString("description");
-                                searcheddata.add(tem);
-                            }*/
+                                String description = lista.getString("description");
+                                int fdcid = lista.getInt("fdcId");
+                                searchedList.put(fdcid, description);
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -103,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void display() {
         Intent intent = new Intent(this, display.class);
+        intent.putExtra("totalhit", hit);
         startActivity(intent);
     }
 
