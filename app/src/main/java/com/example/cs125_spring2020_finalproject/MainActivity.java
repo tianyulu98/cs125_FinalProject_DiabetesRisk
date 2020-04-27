@@ -28,25 +28,29 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static String textSearch;
     private static final String fda = "https://api.nal.usda.gov/fdc/v1/search?";
     private static final String apikey = "api_key=WfBOw7Htobl3oAqVVFbVdvEoDiN6IOpd6K6QeG8t";
     public static List<String> searcheddata;
     public static int hit = 0;
-    private RequestQueue queue;
+    public static String input;
+    private static RequestQueue queue;
+    private EditText searchinput;
+    private Button searchbutton;
+    public static String textSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button generate = findViewById(R.id.generateButton);
         Button clear = findViewById(R.id.clearButton);
-        Button searchbutton = findViewById(R.id.search);
-        queue = Volley.newRequestQueue(this);
-        EditText search = findViewById(R.id.searchFDA);
-        textSearch = search.getText().toString();
+        searchbutton = findViewById(R.id.search);
+        searchinput = findViewById(R.id.searchFDA);
         //hitting searchbutton should pop a list of searched food.
         searchbutton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                queue = Volley.newRequestQueue(getApplicationContext());
+                textSearch = searchinput.getText().toString();
                 search(textSearch);
                 display();
             }
@@ -67,8 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void search(String toSearch) {
-        final String input = "&query=" + toSearch;
-        JsonObjectRequest searchRequest = new JsonObjectRequest(Request.Method.GET, fda + apikey + input,
+        input = fda + apikey + "&query=" + toSearch;
+        JsonObjectRequest searchRequest = new JsonObjectRequest(Request.Method.GET, input,
                 null,
                 new Response.Listener<JSONObject>() {
                     @Override

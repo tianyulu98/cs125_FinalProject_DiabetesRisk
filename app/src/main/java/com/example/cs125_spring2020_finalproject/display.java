@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import static com.example.cs125_spring2020_finalproject.MainActivity.hit;
+import static com.example.cs125_spring2020_finalproject.MainActivity.input;
 import static com.example.cs125_spring2020_finalproject.MainActivity.searcheddata;
+import static com.example.cs125_spring2020_finalproject.MainActivity.textSearch;
 
 public class display extends AppCompatActivity {
 
