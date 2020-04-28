@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text=" clear all"
+        android:text="start new"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/generateButton"
         app:layout_constraintStart_toStartOf="parent" />
@@ -90,22 +90,11 @@
         android:layout_marginTop="29dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="check"
+        android:text="seeall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.878"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add" />
-
-    <Button
-        android:id="@+id/clearfood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="clear"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search" />
 
     <Button
         android:id="@+id/add"

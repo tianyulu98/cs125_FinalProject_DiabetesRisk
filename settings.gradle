@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='CS125_Spring2020_FinalProject'
+rootProject.name='cs125_spring2020_finalproject'
