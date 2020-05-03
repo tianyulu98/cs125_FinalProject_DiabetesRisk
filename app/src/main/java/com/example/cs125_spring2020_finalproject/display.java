@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,12 +25,13 @@ public class display extends AppCompatActivity {
         Intent mIntent = getIntent();
         ArrayList<String> list = mIntent.getStringArrayListExtra("list");
         setContentView(R.layout.activity_display);
-        String s = "";
-        for (int i = 0; i < list.size(); i++) {
-            s += list.get(i);
-        }
+
         TextView display = findViewById(R.id.textView3);
         display.setText("");
-        display.setText(s);
+        display.setTextSize(22);
+        for (int i=0; i < list.size();i++){
+            display.append(list.get(i));
+            display.append("\n");
+        }
     }
 }

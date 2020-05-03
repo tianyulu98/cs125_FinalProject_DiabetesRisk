@@ -10,8 +10,6 @@
         android:id="@+id/textView3"
         android:layout_width="359dp"
         android:layout_height="527dp"
-        android:text="TextView"
-        android:textSize="23dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

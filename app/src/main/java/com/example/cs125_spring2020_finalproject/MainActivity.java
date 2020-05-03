@@ -293,7 +293,6 @@ public class MainActivity extends AppCompatActivity {
 
     //check button should return a list of all inputs.
     public void display() {
-
         Intent intent = new Intent(this, display.class);
         intent.putExtra("list", enteredFood);
         startActivity(intent);
