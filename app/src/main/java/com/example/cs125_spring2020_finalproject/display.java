@@ -17,7 +17,6 @@ import java.util.Map;
 import static com.example.cs125_spring2020_finalproject.MainActivity.input;
 
 public class display extends AppCompatActivity {
-    public String inputfood;
     public String[] tostring;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +24,12 @@ public class display extends AppCompatActivity {
         Intent mIntent = getIntent();
         ArrayList<String> list = mIntent.getStringArrayListExtra("list");
         setContentView(R.layout.activity_display);
-        tostring = new String[list.size()];
+        String s = "";
         for (int i = 0; i < list.size(); i++) {
-            tostring[i] = list.get(i);
+            s += list.get(i);
         }
         TextView display = findViewById(R.id.textView3);
         display.setText("");
-        display.setText(input);
+        display.setText(s);
     }
 }

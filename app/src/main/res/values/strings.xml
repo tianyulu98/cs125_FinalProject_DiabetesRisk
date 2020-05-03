@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CS125_Spring2020_FinalProject</string>
+    <string-array name="gender">
+        <item>male</item>
+        <item>female</item>
+    </string-array>
 </resources>
