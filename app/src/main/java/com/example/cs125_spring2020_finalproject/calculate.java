@@ -24,12 +24,19 @@ public class calculate {
         if (partion <= 100) {
             return "Carbohydrate intake " + carb + ". Reaches " + partion
                     + "% daily value." + System.getProperty ("line.separator")
-                    + "Low risk for diabetes." + "carb need is " + carbneed;
+                    + "Low risk for diabetes." + System.getProperty ("line.separator")
+                    + "Carb need is " + carbneed;
         }
         if (partion <= 125) {
-            return "Carbohydrate intake " + carb + "reaches " + partion + "%. Risk exists for diabetes";
+            return "Carbohydrate intake " + carb + ". Reaches " + partion
+                    + "% daily value." + System.getProperty ("line.separator")
+                    + "Risk exists for diabetes." + System.getProperty ("line.separator")
+                    + "Carb need is " + carbneed;
         }
-        return "Carbohydrate intake " + carb + "reaches " + partion + "%. High risk for diabetes";
+        return "Carbohydrate intake " + carb + ". Reaches " + partion
+                + "% daily value." + System.getProperty ("line.separator")
+                + "High risk for diabetes." + System.getProperty ("line.separator")
+                + "Carb need is " + carbneed;
     }
 
     public int hypertension() {

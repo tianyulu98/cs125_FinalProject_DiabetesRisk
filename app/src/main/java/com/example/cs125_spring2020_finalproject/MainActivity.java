@@ -218,8 +218,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // user clicked OK
-                addNutrient(inputfood, foodamount);
-                searchinput.setText("");
+                try {
+                    addNutrient(inputfood, foodamount);
+                    searchinput.setText("");
+                } catch (NullPointerException e) {
+                    inputfood = (fdafood) listtochoose.get(which);
+                    addNutrient(inputfood, foodamount);
+                    searchinput.setText("");
+                }
             }
         });
         builder.setNegativeButton("Cancel", null);
@@ -291,6 +297,18 @@ public class MainActivity extends AppCompatActivity {
         foodweight.setText("");
     }
 
+    public void errorDialog() {
+        AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+        alertDialog.setTitle("Error");
+        alertDialog.setMessage("Please try again");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+    }
     //check button should return a list of all inputs.
     public void display() {
         Intent intent = new Intent(this, display.class);
