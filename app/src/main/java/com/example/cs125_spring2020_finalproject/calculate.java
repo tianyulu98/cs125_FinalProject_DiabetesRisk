@@ -1,5 +1,7 @@
 package com.example.cs125_spring2020_finalproject;
 
+import java.text.DecimalFormat;
+
 public class calculate {
     private static final double calorie = 2000.0;
     private static final double activity = 7.0;
@@ -21,6 +23,9 @@ public class calculate {
         double carbneed = n * carbohydrate;
         double tem = carb / carbneed;
         double partion = (double) Math.round(tem * 100);
+        DecimalFormat df = new DecimalFormat("#.##");
+        carb = Double.valueOf(df.format(carb));
+        carbneed = Double.valueOf(df.format(carbneed));
         if (partion <= 100) {
             return "Carbohydrate intake " + carb + ". Reaches " + partion
                     + "% daily value." + System.getProperty ("line.separator")

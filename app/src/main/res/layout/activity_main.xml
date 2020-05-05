@@ -15,7 +15,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkButton"
+        app:layout_constraintVertical_bias="0.617" />
 
     <EditText
         android:id="@+id/editText3"
@@ -49,8 +51,10 @@
         android:text="clear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/generateButton"
-        app:layout_constraintHorizontal_bias="0.325"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.327"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search"
+        app:layout_constraintVertical_bias="0.611" />
 
     <EditText
         android:id="@+id/searchFDA"
@@ -60,7 +64,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="264dp"
         android:ems="10"
-        android:hint="searchFDA"
+        android:hint="search food"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.068"

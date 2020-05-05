@@ -210,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // user checked an item
+                Log.i("choose index", String.valueOf(which));
                 inputfood = (fdafood) listtochoose.get(which);
             }
         });
@@ -222,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                     addNutrient(inputfood, foodamount);
                     searchinput.setText("");
                 } catch (NullPointerException e) {
-                    inputfood = (fdafood) listtochoose.get(which);
+                    inputfood = (fdafood) listtochoose.get(which + 1);
                     addNutrient(inputfood, foodamount);
                     searchinput.setText("");
                 }
